@@ -5,7 +5,7 @@ on:
 
 jobs:
   py-mypy:
-    name: Binary search - Typecheck (Mypy)
+    name: Binary search - Typecheck and Formatting check (Mypy)
     runs-on: ubuntu-latest
     steps:
 
@@ -16,5 +16,9 @@ jobs:
         python-version: '3.10'
 
     - run: pip install mypy
+    - run: pip install black
 
     - run: mypy binary-search-typed.py
+    
+    # --check fails if black would reformat, succeeds if no changes
+    - run: black --check binary-search-typed.py
