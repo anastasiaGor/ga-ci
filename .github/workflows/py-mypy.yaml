@@ -1,4 +1,4 @@
-name: Binary search - Typecheck (Mypy)
+name: Binary search - Typecheck and Formatting check (Mypy and Black)
 
 on:
   push
